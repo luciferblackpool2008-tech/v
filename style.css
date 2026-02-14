@@ -1,4 +1,3 @@
-/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,36 +5,30 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* ===== BODY ===== */
 body {
   min-height: 100vh;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: white;
   overflow-x: hidden;
-  color: #fff;
 }
 
-/* ===== HEART DROP (FRONT PAGE ONLY) ===== */
+/* ❤️ HEARTS (FRONT PAGE ONLY) */
 .front-page .heart {
   position: fixed;
   top: -10%;
   font-size: 22px;
-  color: rgba(255, 255, 255, 0.7);
   animation: heartFall 9s linear infinite;
   pointer-events: none;
 }
 
 @keyframes heartFall {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(110vh) scale(1.3);
+  to {
+    transform: translateY(110vh);
     opacity: 0;
   }
 }
 
-/* ===== PASSWORD SCREEN ===== */
+/* 🔐 LOCK SCREEN */
 .lock-screen {
   height: 100vh;
   display: flex;
@@ -44,17 +37,17 @@ body {
 }
 
 .lock-box {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255,255,255,0.2);
   padding: 35px;
-  border-radius: 22px;
-  backdrop-filter: blur(12px);
+  border-radius: 25px;
   text-align: center;
-  animation: softGlow 2s infinite alternate;
+  backdrop-filter: blur(10px);
+  animation: glow 2s infinite alternate;
 }
 
-@keyframes softGlow {
-  from { box-shadow: 0 0 20px rgba(255,105,180,0.5); }
-  to { box-shadow: 0 0 40px rgba(255,105,180,0.9); }
+@keyframes glow {
+  from { box-shadow: 0 0 20px pink; }
+  to { box-shadow: 0 0 45px hotpink; }
 }
 
 .lock-box input {
@@ -62,57 +55,42 @@ body {
   width: 220px;
   border-radius: 12px;
   border: none;
-  outline: none;
-  margin-bottom: 18px;
+  margin: 15px 0;
 }
 
 .lock-box button {
-  padding: 12px 32px;
+  padding: 12px 35px;
   border-radius: 30px;
   border: none;
   background: linear-gradient(45deg, #ff4e8a, #ff85b3);
   color: white;
-  font-size: 16px;
   cursor: pointer;
-  animation: pulse 1.6s infinite;
+  animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.07); }
-  100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
-/* ===== MEMORIES SECTION ===== */
+/* 💞 MEMORIES */
 .memories {
+  padding: 100px 20px 180px;
   max-width: 1200px;
   margin: auto;
-  padding: 100px 20px 180px;
+  text-align: center;
 }
 
-/* ===== PHOTO GRID (NO OVERLAP EVER) ===== */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
   gap: 40px;
-  position: relative;
 }
 
-.photo-grid::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 2px dashed rgba(255,255,255,0.25);
-  border-radius: 30px;
-  pointer-events: none;
-}
-
-/* ===== PHOTOS ===== */
 .photo-grid img {
   width: 100%;
   max-width: 220px;
   border-radius: 18px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
   transform: rotate(var(--rotate));
   transition: transform 0.4s;
 }
@@ -121,47 +99,96 @@ body {
   transform: scale(1.08) rotate(0deg);
 }
 
-/* ===== BOTTOM BUTTON AREA ===== */
+/* 💌 BUTTON */
 .bottom-action {
   position: fixed;
-  bottom: 28px;
+  bottom: 30px;
   width: 100%;
   display: flex;
   justify-content: center;
-  z-index: 20;
 }
 
-/* ===== LOVE LETTER BUTTON ===== */
 .love-letter-btn {
-  padding: 16px 50px;
-  font-size: 20px;
+  padding: 16px 48px;
   border-radius: 50px;
   border: none;
-  cursor: pointer;
-  color: white;
+  font-size: 20px;
   background: linear-gradient(45deg, #ff4e8a, #ff85b3);
-  box-shadow: 0 0 25px rgba(255,105,180,0.85);
+  color: white;
+  cursor: pointer;
   animation: loveGlow 1.8s infinite alternate;
 }
 
 @keyframes loveGlow {
-  from { box-shadow: 0 0 18px rgba(255,105,180,0.6); }
-  to { box-shadow: 0 0 45px rgba(255,105,180,1); }
+  from { box-shadow: 0 0 18px pink; }
+  to { box-shadow: 0 0 45px hotpink; }
 }
 
-/* ===== LOVE LETTER PAGE ===== */
+/* 💌 ENVELOPE */
+.envelope-container {
+  text-align: center;
+  margin-top: 120px;
+  cursor: pointer;
+}
+
+.envelope {
+  width: 200px;
+  height: 130px;
+  position: relative;
+  margin: auto;
+}
+
+.envelope .body {
+  width: 100%;
+  height: 100%;
+  background: #ff85b3;
+  border-radius: 0 0 15px 15px;
+}
+
+.envelope .flap {
+  position: absolute;
+  width: 100%;
+  height: 65px;
+  background: #ff4e8a;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  transform-origin: top;
+  transition: transform 1s ease;
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.tap-text {
+  margin-top: 15px;
+}
+
+/* 💌 LETTER */
 .letter {
-  max-width: 620px;
-  margin: 120px auto;
+  max-width: 600px;
   background: white;
   color: #333;
+  margin: 80px auto;
   padding: 40px;
   border-radius: 20px;
-  transform: scaleY(0);
-  transform-origin: top;
-  animation: openLetter 1.5s forwards;
 }
 
-@keyframes openLetter {
-  to { transform: scaleY(1); }
+.hidden {
+  display: none;
+}
+
+/* 🌹 ROSE PETALS */
+.rose {
+  position: fixed;
+  top: -10%;
+  font-size: 22px;
+  animation: roseFall 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes roseFall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
 }
