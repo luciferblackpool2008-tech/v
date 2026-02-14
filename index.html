@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Wifey ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- LOCK SCREEN -->
+<section id="lockScreen">
+  <div class="lock-box">
+    <h1>💖 Welcome My Love 💖</h1>
+    <input type="password" id="password" placeholder="Enter our secret">
+    <button id="unlockBtn">Unlock Love 💕</button>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section id="mainContent" class="hidden">
+  <audio id="bgMusic" src="music/love.mp3" loop></audio>
+
+  <h2 class="title">Our Story in Moments 💞</h2>
+
+  <!-- connecting lines -->
+  <svg class="lines" viewBox="0 0 1000 1200" preserveAspectRatio="none">
+    <path d="M500 50 C200 200, 200 400, 500 550 C800 700, 800 900, 500 1100"/>
+  </svg>
+
+  <div class="photos">
+    <img src="images/us1.jpg">
+    <img src="images/us2.jpg">
+    <img src="images/us3.jpg">
+    <img src="images/us4.jpg">
+    <img src="images/us5.jpg">
+    <img src="images/us6.jpg">
+    <img src="images/us7.jpg">
+    <img src="images/us8.jpg">
+    <img src="images/us9.jpg">
+    <img src="images/us10.jpg">
+  </div>
+
+  <button class="next-btn" id="letterBtn">Open My Letter 💌</button>
+</section>
+
+<!-- LETTER -->
+<section id="letterScreen" class="hidden">
+  <div class="envelope" id="envelope">✉️</div>
+
+  <div class="letter hidden" id="letter">
+    <h2>My Wifey Siddhii ❤️</h2>
+    <p>
+      This may be a simple website,  
+      but every photo here is a piece of my heart.  
+      I promise our next outing will be unforgettable.  
+      I love you more than words. 💖
+    </p>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
