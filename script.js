@@ -11,11 +11,15 @@ const music = document.getElementById("bgMusic");
 unlockBtn.addEventListener("click", () => {
   const pass = document.getElementById("password").value;
 
-  if (pass === "siddhii") {   // 🔑 CHANGE PASSWORD HERE
+  if (pass === "siddhii") {   // CHANGE PASSWORD HERE
     lockScreen.style.display = "none";
     mainContent.classList.remove("hidden");
 
-    music.play();             // autoplay WORKS now
+    music.muted = false;
+    music.play().catch(() => {
+      alert("Tap anywhere once to enable music 🎶");
+    });
+
     startHearts();
   } else {
     alert("Wrong password 💔");
@@ -40,20 +44,17 @@ function startHearts() {
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.top = "-20px";
     heart.style.fontSize = "20px";
-    heart.style.animation = "fall 5s linear";
+    heart.style.opacity = "0.7";
+    heart.style.animation = "fall 6s linear";
     document.body.appendChild(heart);
 
-    setTimeout(() => heart.remove(), 5000);
-  }, 350);
+    setTimeout(() => heart.remove(), 6000);
+  }, 400);
 }
 
-/* HEART FALL ANIMATION */
 const style = document.createElement("style");
 style.innerHTML = `
 @keyframes fall {
-  to {
-    transform: translateY(110vh);
-    opacity: 0;
-  }
+  to { transform: translateY(110vh); opacity: 0; }
 }`;
 document.head.appendChild(style);
