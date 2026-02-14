@@ -1,43 +1,59 @@
-function unlock() {
+const unlockBtn = document.getElementById("unlockBtn");
+const letterBtn = document.getElementById("letterBtn");
+const envelope = document.getElementById("envelope");
+
+const lockScreen = document.getElementById("lockScreen");
+const mainContent = document.getElementById("mainContent");
+const letterScreen = document.getElementById("letterScreen");
+const letter = document.getElementById("letter");
+const music = document.getElementById("bgMusic");
+
+unlockBtn.addEventListener("click", () => {
   const pass = document.getElementById("password").value;
-  if (pass === "siddhii") { // CHANGE PASSWORD HERE
-    document.getElementById("lockScreen").style.display = "none";
-    document.getElementById("mainContent").classList.remove("hidden");
-    document.getElementById("bgMusic").play();
+
+  if (pass === "siddhii") {   // 🔑 CHANGE PASSWORD HERE
+    lockScreen.style.display = "none";
+    mainContent.classList.remove("hidden");
+
+    music.play();             // autoplay WORKS now
     startHearts();
   } else {
     alert("Wrong password 💔");
   }
-}
+});
 
-function openLetter() {
-  document.getElementById("mainContent").style.display = "none";
-  document.getElementById("letterScreen").classList.remove("hidden");
-}
+letterBtn.addEventListener("click", () => {
+  mainContent.classList.add("hidden");
+  letterScreen.classList.remove("hidden");
+});
 
-function unfold() {
-  document.querySelector(".letter").style.display = "block";
-}
+envelope.addEventListener("click", () => {
+  letter.classList.remove("hidden");
+});
 
 /* HEART RAIN */
 function startHearts() {
   setInterval(() => {
     const heart = document.createElement("div");
-    heart.innerHTML = "❤️";
+    heart.innerText = "❤️";
     heart.style.position = "fixed";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.top = "-10px";
+    heart.style.top = "-20px";
     heart.style.fontSize = "20px";
     heart.style.animation = "fall 5s linear";
     document.body.appendChild(heart);
 
     setTimeout(() => heart.remove(), 5000);
-  }, 300);
+  }, 350);
 }
 
+/* HEART FALL ANIMATION */
 const style = document.createElement("style");
 style.innerHTML = `
 @keyframes fall {
-  to { transform: translateY(110vh); opacity: 0; }
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
 }`;
 document.head.appendChild(style);
