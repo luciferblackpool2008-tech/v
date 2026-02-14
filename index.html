@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Wifey ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PASSWORD PAGE -->
+<div id="lockScreen">
+  <div class="hearts-bg"></div>
+  <div class="lock-box">
+    <h1>💖 Welcome My Love 💖</h1>
+    <input type="password" id="password" placeholder="Enter our secret">
+    <button onclick="unlock()">Unlock Love</button>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent" class="hidden">
+
+  <audio id="bgMusic" src="music/love.mp3"></audio>
+
+  <div class="heart-rain"></div>
+
+  <h2 class="title">Our Beautiful Memories 💕</h2>
+
+  <div class="photos">
+    <img src="images/us1.jpg">
+    <img src="images/us2.jpg">
+    <img src="images/us3.jpg">
+    <img src="images/us4.jpg">
+    <img src="images/us5.jpg">
+    <img src="images/us6.jpg">
+    <img src="images/us7.jpg">
+    <img src="images/us8.jpg">
+    <img src="images/us9.jpg">
+    <img src="images/us10.jpg">
+  </div>
+
+  <button class="next-btn" onclick="openLetter()">Open My Letter 💌</button>
+
+</div>
+
+<!-- LOVE LETTER -->
+<div id="letterScreen" class="hidden">
+  <div class="envelope" onclick="unfold()">
+    <div class="letter">
+      <h2>My Wifey Siddhii ❤️</h2>
+      <p>
+        (WRITE YOUR LOVE LETTER HERE 💖)  
+        Sorry I couldn’t do much this time,  
+        but I promise our next outing will be magical.  
+        I love you endlessly. ❤️
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
