@@ -8,7 +8,7 @@
 
 <body class="front-page">
 
-<!-- ❤️ HEART CONTAINER (FRONT PAGE ONLY) -->
+<!-- ❤️ HEARTS (ONLY FRONT PAGE) -->
 <div id="heart-container"></div>
 
 <!-- 🔐 LOCK SCREEN -->
@@ -25,10 +25,8 @@
 
 <!-- 💞 MAIN CONTENT -->
 <section id="mainContent" class="memories" style="display:none;">
+  <h2 class="title">Moments 💞</h2>
 
-  <h2 class="title" style="text-align:center;">Moments 💞</h2>
-
-  <!-- 📸 PHOTOS -->
   <div class="photo-grid">
     <img src="images/us1.jpg" style="--rotate:-6deg">
     <img src="images/us2.jpg" style="--rotate:4deg">
@@ -41,23 +39,30 @@
     <img src="images/us9.jpg" style="--rotate:-5deg">
     <img src="images/us10.jpg" style="--rotate:6deg">
   </div>
-
 </section>
 
-<!-- 💌 LOVE LETTER BUTTON -->
+<!-- 💌 LETTER BUTTON -->
 <div class="bottom-action" id="letterBtn" style="display:none;">
   <button class="love-letter-btn" onclick="openLetter()">💖 Love Letter 💖</button>
 </div>
 
-<!-- 💌 LETTER SCREEN -->
+<!-- 💌 LETTER PAGE -->
 <section id="letterPage" style="display:none;">
-  <div class="letter">
+  <div class="envelope-container" onclick="openEnvelope()">
+    <div class="envelope">
+      <div class="flap"></div>
+      <div class="body"></div>
+    </div>
+    <p class="tap-text">Tap to open 💌</p>
+  </div>
+
+  <div class="letter hidden" id="letter">
     <h2>My Wifey Siddhii 😘</h2>
     <p>
       This may be a simple website,  
       but every photo here is so special.  
       Ik aaj hum valentine celebrate nahi kar paaye,  
-      but outing pe zaroor 💕 future mein toh aur achese.  
+      but outing pe zaroor 💕 future mein toh pakka.  
 
       You are my best companion — partner, wifey ❤️  
       Miles to go together 😇🥳  
