@@ -7,24 +7,20 @@
 </head>
 <body>
 
-<!-- PASSWORD PAGE -->
-<div id="lockScreen">
-  <div class="hearts-bg"></div>
+<!-- LOCK SCREEN -->
+<section id="lockScreen">
   <div class="lock-box">
     <h1>💖 Welcome My Love 💖</h1>
     <input type="password" id="password" placeholder="Enter our secret">
-    <button onclick="unlock()">Unlock Love</button>
+    <button id="unlockBtn">Unlock Love 💕</button>
   </div>
-</div>
+</section>
 
 <!-- MAIN CONTENT -->
-<div id="mainContent" class="hidden">
+<section id="mainContent" class="hidden">
+  <audio id="bgMusic" src="music/love.mp3" loop></audio>
 
-  <audio id="bgMusic" src="music/love.mp3"></audio>
-
-  <div class="heart-rain"></div>
-
-  <h2 class="title">Our Beautiful Memories 💕</h2>
+  <h2 class="title">Our Beautiful Memories 💞</h2>
 
   <div class="photos">
     <img src="images/us1.jpg">
@@ -39,24 +35,25 @@
     <img src="images/us10.jpg">
   </div>
 
-  <button class="next-btn" onclick="openLetter()">Open My Letter 💌</button>
+  <button class="next-btn" id="letterBtn">Open My Letter 💌</button>
+</section>
 
-</div>
-
-<!-- LOVE LETTER -->
-<div id="letterScreen" class="hidden">
-  <div class="envelope" onclick="unfold()">
-    <div class="letter">
-      <h2>My Wifey Siddhii ❤️</h2>
-      <p>
-        (WRITE YOUR LOVE LETTER HERE 💖)  
-        Sorry I couldn’t do much this time,  
-        but I promise our next outing will be magical.  
-        I love you endlessly. ❤️
-      </p>
-    </div>
+<!-- LETTER PAGE -->
+<section id="letterScreen" class="hidden">
+  <div class="envelope" id="envelope">
+    <span>✉️</span>
   </div>
-</div>
+
+  <div class="letter hidden" id="letter">
+    <h2>My Wifey Siddhii ❤️</h2>
+    <p>
+      I know this Valentine’s Day is simple…  
+      but my love for you is not.  
+      I promise our next outing will be magical.  
+      You are my heart, my peace, my forever. 💖
+    </p>
+  </div>
+</section>
 
 <script src="script.js"></script>
 </body>
