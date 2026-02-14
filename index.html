@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Password Screen -->
+<div id="lockScreen">
+  <h2>🔐 Enter Password</h2>
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="checkPassword()">Unlock ❤️</button>
+</div>
+
+<!-- Main Content -->
+<div id="mainContent">
+  <audio id="bgMusic" loop>
+    <source src="music/love.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Hearts -->
+  <div class="hearts"></div>
+
+  <!-- Image Timeline -->
+  <div class="timeline">
+    <img src="images/us1.jpg">
+    <img src="images/us2.jpg">
+    <img src="images/us3.jpg">
+    <img src="images/us4.jpg">
+    <img src="images/us5.jpg">
+    <img src="images/us6.jpg">
+    <img src="images/us7.jpg">
+    <img src="images/us8.jpg">
+    <img src="images/us9.jpg">
+    <img src="images/us10.jpg">
+  </div>
+
+  <!-- Love Letter -->
+  <div id="letter">
+    <h1>💌 My Love</h1>
+    <p>
+      Every picture here is a memory,  
+      every beat is my heart,  
+      and every second is only for you ❤️  
+    </p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
 
