@@ -11,7 +11,7 @@ const music = document.getElementById("bgMusic");
 unlockBtn.addEventListener("click", () => {
   const pass = document.getElementById("password").value;
 
-  if (pass === "siddhii") {
+  if (pass === "121316") {
     lockScreen.style.display = "none";
     mainContent.classList.remove("hidden");
 
@@ -21,7 +21,7 @@ unlockBtn.addEventListener("click", () => {
 
     startHearts();
   } else {
-    alert("Wrong password 💔");
+    alert("Wrong password 😂");
   }
 });
 
