@@ -5,60 +5,67 @@
   <title>For My Wifey ❤️</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<!-- LOCK SCREEN -->
-<section id="lockScreen">
+<body class="front-page">
+
+<!-- ❤️ HEART CONTAINER (FRONT PAGE ONLY) -->
+<div id="heart-container"></div>
+
+<!-- 🔐 LOCK SCREEN -->
+<section id="lockScreen" class="lock-screen">
   <div class="lock-box">
     <h1>💖 MY SIDDHOOOO 😘😘😘</h1>
     <input type="password" id="password" placeholder="Enter our secret">
-    <button id="unlockBtn">Unlock 💕</button>
+    <button onclick="unlock()">Unlock 💕</button>
   </div>
 </section>
 
-<!-- MAIN CONTENT -->
-<section id="mainContent" class="hidden">
-  <audio id="bgMusic" src="music/love.mp3" loop></audio>
+<!-- 🎵 MUSIC -->
+<audio id="bgMusic" src="music/love.mp3" loop></audio>
 
-  <h2 class="title"> Moments 💞</h2>
+<!-- 💞 MAIN CONTENT -->
+<section id="mainContent" class="memories" style="display:none;">
 
-  <!-- connecting lines -->
-  <svg class="lines" viewBox="0 0 1000 1200" preserveAspectRatio="none">
-    <path d="M500 50 C200 200, 200 400, 500 550 C800 700, 800 900, 500 1100"/>
-  </svg>
+  <h2 class="title" style="text-align:center;">Moments 💞</h2>
 
-  <div class="photos">
-    <img src="images/us1.jpg">
-    <img src="images/us2.jpg">
-    <img src="images/us3.jpg">
-    <img src="images/us4.jpg">
-    <img src="images/us5.jpg">
-    <img src="images/us6.jpg">
-    <img src="images/us7.jpg">
-    <img src="images/us8.jpg">
-    <img src="images/us9.jpg">
-    <img src="images/us10.jpg">
+  <!-- 📸 PHOTOS -->
+  <div class="photo-grid">
+    <img src="images/us1.jpg" style="--rotate:-6deg">
+    <img src="images/us2.jpg" style="--rotate:4deg">
+    <img src="images/us3.jpg" style="--rotate:-5deg">
+    <img src="images/us4.jpg" style="--rotate:6deg">
+    <img src="images/us5.jpg" style="--rotate:-4deg">
+    <img src="images/us6.jpg" style="--rotate:5deg">
+    <img src="images/us7.jpg" style="--rotate:-6deg">
+    <img src="images/us8.jpg" style="--rotate:4deg">
+    <img src="images/us9.jpg" style="--rotate:-5deg">
+    <img src="images/us10.jpg" style="--rotate:6deg">
   </div>
 
-  <button class="next-btn" id="letterBtn">Open My Letter 💌</button>
 </section>
 
-<!-- LETTER -->
-<section id="letterScreen" class="hidden">
-  <div class="envelope" id="envelope">✉️</div>
+<!-- 💌 LOVE LETTER BUTTON -->
+<div class="bottom-action" id="letterBtn" style="display:none;">
+  <button class="love-letter-btn" onclick="openLetter()">💖 Love Letter 💖</button>
+</div>
 
-  <div class="letter hidden" id="letter">
+<!-- 💌 LETTER SCREEN -->
+<section id="letterPage" style="display:none;">
+  <div class="letter">
     <h2>My Wifey Siddhii 😘</h2>
     <p>
       This may be a simple website,  
-      but every photo here is so special,
-      Ik aaj hum valentine celebrate nhi kar payee,
-      But will do outing pe, also future main obv.
-      You are my best companion #partner #wifey
-      Miless to goo 😇,together 🥳
-      Coding sucks bhai, but isspe bohot
-      maazaa ayaa 😂, and aur main kya bolu
-      you know everything for real
+      but every photo here is so special.  
+      Ik aaj hum valentine celebrate nahi kar paaye,  
+      but outing pe zaroor 💕 future mein toh aur achese.  
+
+      You are my best companion — partner, wifey ❤️  
+      Miles to go together 😇🥳  
+
+      Coding sucked bhai 😂  
+      but isspe bohot maza aaya.  
+      Baaki sab tum jaanti ho.  
+
       I loveeee youuu sooo muchhh geluuu 😘
     </p>
   </div>
