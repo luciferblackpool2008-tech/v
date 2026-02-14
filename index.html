@@ -2,29 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For You ❤️</title>
+  <title>For My Wifey ❤️</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Password Screen -->
+<!-- PASSWORD PAGE -->
 <div id="lockScreen">
-  <h2>🔐 Enter Password</h2>
-  <input type="password" id="password" placeholder="Password">
-  <button onclick="checkPassword()">Unlock ❤️</button>
+  <div class="hearts-bg"></div>
+  <div class="lock-box">
+    <h1>💖 Welcome My Love 💖</h1>
+    <input type="password" id="password" placeholder="Enter our secret">
+    <button onclick="unlock()">Unlock Love</button>
+  </div>
 </div>
 
-<!-- Main Content -->
-<div id="mainContent">
-  <audio id="bgMusic" loop>
-    <source src="music/love.mp3" type="audio/mpeg">
-  </audio>
+<!-- MAIN CONTENT -->
+<div id="mainContent" class="hidden">
 
-  <!-- Hearts -->
-  <div class="hearts"></div>
+  <audio id="bgMusic" src="music/love.mp3"></audio>
 
-  <!-- Image Timeline -->
-  <div class="timeline">
+  <div class="heart-rain"></div>
+
+  <h2 class="title">Our Beautiful Memories 💕</h2>
+
+  <div class="photos">
     <img src="images/us1.jpg">
     <img src="images/us2.jpg">
     <img src="images/us3.jpg">
@@ -37,18 +39,25 @@
     <img src="images/us10.jpg">
   </div>
 
-  <!-- Love Letter -->
-  <div id="letter">
-    <h1>💌 My Love</h1>
-    <p>
-      Every picture here is a memory,  
-      every beat is my heart,  
-      and every second is only for you ❤️  
-    </p>
+  <button class="next-btn" onclick="openLetter()">Open My Letter 💌</button>
+
+</div>
+
+<!-- LOVE LETTER -->
+<div id="letterScreen" class="hidden">
+  <div class="envelope" onclick="unfold()">
+    <div class="letter">
+      <h2>My Wifey Siddhii ❤️</h2>
+      <p>
+        (WRITE YOUR LOVE LETTER HERE 💖)  
+        Sorry I couldn’t do much this time,  
+        but I promise our next outing will be magical.  
+        I love you endlessly. ❤️
+      </p>
+    </div>
   </div>
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
