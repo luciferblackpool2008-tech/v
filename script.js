@@ -1,59 +1,48 @@
-const unlockBtn = document.getElementById("unlockBtn");
-const letterBtn = document.getElementById("letterBtn");
-const envelope = document.getElementById("envelope");
+const correctPassword = "121316"; // CHANGE THIS
 
-const lockScreen = document.getElementById("lockScreen");
-const mainContent = document.getElementById("mainContent");
-const letterScreen = document.getElementById("letterScreen");
-const letter = document.getElementById("letter");
-const music = document.getElementById("bgMusic");
-
-unlockBtn.addEventListener("click", () => {
+function unlock() {
   const pass = document.getElementById("password").value;
+  if (pass === correctPassword) {
 
-  if (pass === "121316") {
-    lockScreen.style.display = "none";
-    mainContent.classList.remove("hidden");
+    // Remove heart animation
+    document.body.classList.remove("front-page");
+    document.getElementById("heart-container").innerHTML = "";
 
-    music.play().catch(() => {
-      alert("Tap once anywhere to enable music 🎶");
-    });
+    // Hide lock screen
+    document.getElementById("lockScreen").style.display = "none";
 
-    startHearts();
+    // Show content
+    document.getElementById("mainContent").style.display = "block";
+    document.getElementById("letterBtn").style.display = "flex";
+
+    // Play music (works because user clicked)
+    document.getElementById("bgMusic").play();
+
   } else {
-    alert("Wrong password 😂");
+    alert("Wrong password 💔");
   }
-});
-
-letterBtn.addEventListener("click", () => {
-  mainContent.classList.add("hidden");
-  letterScreen.classList.remove("hidden");
-});
-
-envelope.addEventListener("click", () => {
-  letter.classList.remove("hidden");
-});
-
-/* HEART RAIN */
-function startHearts() {
-  setInterval(() => {
-    const heart = document.createElement("div");
-    heart.innerText = "❤️";
-    heart.style.position = "fixed";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.top = "-20px";
-    heart.style.fontSize = "20px";
-    heart.style.opacity = "0.7";
-    heart.style.animation = "fall 6s linear";
-    document.body.appendChild(heart);
-
-    setTimeout(() => heart.remove(), 6000);
-  }, 400);
 }
 
-const style = document.createElement("style");
-style.innerHTML = `
-@keyframes fall {
-  to { transform: translateY(110vh); opacity: 0; }
-}`;
-document.head.appendChild(style);
+/* 💖 HEART GENERATOR (FRONT PAGE ONLY) */
+function createHeart() {
+  if (!document.body.classList.contains("front-page")) return;
+
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (6 + Math.random() * 4) + "s";
+
+  document.getElementById("heart-container").appendChild(heart);
+
+  setTimeout(() => heart.remove(), 9000);
+}
+
+setInterval(createHeart, 300);
+
+/* 💌 OPEN LETTER */
+function openLetter() {
+  document.getElementById("mainContent").style.display = "none";
+  document.getElementById("letterBtn").style.display = "none";
+  document.getElementById("letterPage").style.display = "block";
+}
